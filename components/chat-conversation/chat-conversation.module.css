@@ -1,0 +1,15 @@
+.conversationWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 50%;
+  position: relative;
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #e9dcf1;
+  border-radius: 6px;
+}

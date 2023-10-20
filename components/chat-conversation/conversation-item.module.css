@@ -1,0 +1,34 @@
+.conversationItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.questionWrapper {
+  width: 100%;
+  display: flex;
+}
+
+.question {
+  background-color: #dbbaf1;
+  border: 1px solid #38015c;
+  border-radius: 6px;
+  width: 80%;
+  padding: 20px;
+  margin: 20px;
+}
+
+.answerWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.answer {
+  background-color: #c0a7cf;
+  border: 1px solid #38015c;
+  border-radius: 6px;
+  width: 80%;
+  padding: 20px;
+  margin: 20px;
+}
