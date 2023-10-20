@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ProfileForm from "./profile-form";
 import classes from "./user-profile.module.css";
 import { useSession } from "next-auth/react";
@@ -9,6 +10,7 @@ export type PasswordData = {
 
 function UserProfile() {
   const { data: session } = useSession();
+  const [result, setResult] = useState("");
 
   const changePasswordHandler = async (passwordData: PasswordData) => {
     const response = await fetch("/api/user/change-password", {
@@ -23,13 +25,14 @@ function UserProfile() {
 
     const data = await response.json();
 
-    // Change page
+    setResult(data.message);
     console.log("changePasswordHandler", data);
   };
 
   return (
     <section className={classes.profile}>
       <h1>Your Profile</h1>
+      {result && <p>{result}</p>}
       <ProfileForm onChangePassword={changePasswordHandler} />
     </section>
   );

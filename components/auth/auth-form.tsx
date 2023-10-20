@@ -49,8 +49,7 @@ function AuthForm() {
       });
 
       if (!result?.error) {
-        // go to chat here
-        router.replace("/profile");
+        router.replace("/chat");
       }
     } else {
       if (!!enteredEmail && !!enteredPassword)
@@ -67,8 +66,7 @@ function AuthForm() {
           });
 
           if (!signInResult?.error && !createUserResult.error) {
-            // go to chat here
-            router.replace("/profile");
+            router.replace("/chat");
           }
         } catch (error) {
           console.log(error);

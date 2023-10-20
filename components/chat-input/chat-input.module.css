@@ -1,0 +1,27 @@
+.chatInput {
+  display: flex;
+  border: 1px solid #38015c;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  position: sticky;
+  top: 110px;
+  padding: 20px;
+  margin: 30px 0;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.chatInput input {
+  display: block;
+  font: inherit;
+  width: 100%;
+  border: none;
+  padding-right: 1rem;
+}
+
+.chatInput input:focus-visible {
+    border: none;
+    outline: none;
+}

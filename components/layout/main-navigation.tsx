@@ -11,7 +11,7 @@ function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      <Link href="/">
+      <Link href="/chat">
         <div className={classes.logo}>Chat App</div>
       </Link>
       <nav>
