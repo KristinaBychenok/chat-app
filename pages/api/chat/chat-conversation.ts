@@ -14,7 +14,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   try {
     const client = new OpenAIClient(
       "https://ai-proxy.lab.epam.com",
-      new AzureKeyCredential("ab89922f25084bf1a33e3db1db9a8997")
+      new AzureKeyCredential(process.env.azure_Key_Credential)
     );
 
     const events = client.listChatCompletions("gpt-35-turbo", [
