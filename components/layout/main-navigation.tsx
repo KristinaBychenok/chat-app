@@ -6,6 +6,7 @@ function MainNavigation() {
   const { status } = useSession();
 
   function logoutHandler() {
+    localStorage.removeItem("conversations-history");
     signOut();
   }
 

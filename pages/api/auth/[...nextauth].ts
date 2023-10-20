@@ -1,5 +1,6 @@
 import { verifyPassword } from "@/lib/auth";
 import { connectToDatabase } from "@/lib/db";
+import { User } from "next-auth";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
@@ -9,7 +10,12 @@ export default NextAuth({
   },
   providers: [
     CredentialsProvider({
-      async authorize(credentials, req) {
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "email", placeholder: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
         const client = await connectToDatabase();
 
         const usersCollection = client.db().collection("auth");
@@ -35,7 +41,7 @@ export default NextAuth({
 
         client.close();
 
-        return { email: user.email, id: user._id };
+        return { id: user._id.toString(), email: user.email };
       },
     }),
   ],
